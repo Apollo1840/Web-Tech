@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SPIDER</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+
+    <!-- Custom fonts for this template -->
+    <link href="{{ url_for('static', filename='vendor/fontawesome-free-5.3.1-web/css/all.min.css') }}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="{{ url_for('static', filename='vendor/flag-icon/css/flag-icon.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/magnific-popup/magnific-popup.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/creative.min.css') }}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <header style="background-image:url({{ url_for('static', filename='img/navbar.png') }});background-size:100%;background-repeat:no-repeat">
+        <div class="container my-auto">
+            <div class="row" style="margin-top:280px">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="text-uppercase">
+                        <strong>We are <span class="typer" data-typer-targets='{ "targets" : ["SIEMENS.","PROCUREMENT.", "DATA.", "EXTRACTION.", "ROBOT.","INTELLIGENT."]}'></span><br>Welcome to SPIDER.</strong>
+                    </h2>
+                </div>
+                <div class="col-lg-10 mx-auto">
+                    <h3>we help you to find information about your supplier.
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+
+
+    <section id="about" style="margin-top:0px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>Material</label>
+                                <input class="form-control" id="name" type="text" placeholder="Which materials are you looking for?">
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div id="contact-chips">
+
+                </div>
+                <div class="col-lg-8 mx-auto">
+
+                </div>
+                <div class="col-lg-8 mx-auto">
+                    <br />
+                    <div align="center">
+                        <button type="button" name="load_data" id="load_data" class="btn btn-primary btn-xl" style="border-radius: 5px">Load Data</button>
+                    </div>
+                    <br />
+                    <div class="loader" id="spider-loader"></div>
+                    <div id="employee_table">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="services" style="background-color:rgb(255,210,0)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">SEARCH FOR SUPPLIER.</h2>
+                    <hr class="light my-4">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>Which supplier are you looking for?</label>
+                                <input class="form-control" id="name2" type="text" placeholder="Which supplier are you looking for?" required="required" data-validation-required-message="Please enter your name.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="chip">
+                                Jabil
+                            </div>
+                            <div class="chip">
+                                Randox
+                            </div>
+                            <div class="chip">
+                                Sanmina
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-8 mx-auto">
+                    <br />
+                    <div align="center">
+                        <button type="button" class="btn btn-primary btn-xl" style="border-radius: 5px;">Load Data</button>
+                    </div>
+                    <br />
+                    <div id="employee_table">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">LATEST NEWS.</h2>
+                    <hr class="light my-4">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                        <label>What news are you looking for?</label>
+                        <input class="form-control" id="name" type="text" placeholder="What news are you looking for?" required="required" data-validation-required-message="Please enter your name.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 50px">
+                <div class="col-lg-10 mx-auto">
+                    <div id="myBtnContainer">
+                        <button class="btn active" onclick="filterSelection('all')" style="background-color:#ec6602;border-radius:5px"> Show all</button>
+                        <button class="btn" onclick="filterSelection('nature')" style="background-color:#ec6602;border-radius:5px"> Innovation</button>
+                        <button class="btn" onclick="filterSelection('cars')" style="background-color:#ec6602;border-radius:5px"> Top Suppliers</button>
+                        <button class="btn" onclick="filterSelection('people')" style="background-color:#ec6602;border-radius:5px"> New Materials</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-lg-12" style="margin-top:50px">
+                <div class="column nature">
+                    <div class="content">
+                        <div class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            Electronics maker Jabil drops 9% after CEO says no improvement in ... (CNBC 19 hours ago)
+                        </div>
+                    </div>
+                </div>
+                <div class="column nature">
+                    <div class="content">
+                        <div class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            Sanmina Announces The Departure Of Bob Eulau And Appointment ... (PR Newswire 2 hours ago)
+                        </div>
+                    </div>
+                </div>
+                <div class="column nature">
+                    <div class="content">
+                        <div class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            Inpeco Recognized by Frost and Sullivan for Expertly Addressing ... (PR Newswire 1 hour ago)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column cars">
+                    <div class="content">
+                        <div class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            Jabil to take over 14 sites from Johnson ... (evertiq.com 4 hours ago)
+                        </div>
+                    </div>
+                </div>
+                <div class="column cars">
+                    <div class="content">
+                        <div class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            Randox Laboratories posts pre-tax losses of £10.8m ... (Irish Times 5 hours ago)
+                        </div>
+                    </div>
+                </div>
+                <div class="column cars">
+                    <div class="content">
+                        <div class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            Sanmina Corporation (NASDAQ:SANM) Shares in Focus: Looking at ... (Winslow Record 20 hours ago)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column people">
+                    <div class="content">
+                        <div class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            Siemens Healthineers Showcases New In Vivo and In Vitro ... (Technology News 6 hours ago)
+                        </div>
+                    </div>
+                </div>
+                <div class="column people">
+                    <div class="content">
+                        <div class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            INSIGHTEC Receives FDA Approval for Exablate Neuro Compatibility ... (CNB 9 hours ago)
+                        </div>
+                    </div>
+                </div>
+                <div class="column people">
+                    <div class="content">
+                        <div class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            US STOCKS ON THE MOVE-Facebook, automakers, XO Group, Jabil ... (Nasdaq yesterday)
+                        </div>
+                    </div>
+                </div>
+                <!-- END GRID -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Plugin JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/scrollreveal/scrollreveal.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jquery-tiping/jquery.typer.js') }}"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="{{ url_for('static', filename='js/jqBootstrapValidation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/contact_me.js') }}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{{ url_for('static', filename='js/creative.min.js') }}"></script>
+    <script>
+        $.ajaxSetup({ cache: false });
+        var delayInMilliseconds = 3000;
+        $(document).ready(function() {
+            $('#load_data').click(function() {
+                var x = $('#name').val(); 
+                var _tmp_table = document.getElementById("employee_table");
+                console.log(_tmp_table);
+                if (_tmp_table !== null) {
+                    console.log("remoe");
+                    _tmp_table.style.display = "none";
+                }
+                document.getElementById("spider-loader").style.display = "block";
+                $.ajax({
+                     async: false,
+                     type: 'GET',
+                     url: "http://localhost:5000/materials?name="+x,
+                     success: function() {
+                                                   $.ajax({
+                              cache: false,
+                             url: "{{ url_for('static', filename='SPIDER.csv') }}",
+                             dataType: "text",
+                             success: function(data) {
+                                    var employee_data = data.split(/\r?\n|\r/);
+                                    var table_data = '<table class="table table-bordered table-striped">';
+                            for (var count = 0; count < employee_data.length; count++) {
+                            var cell_data = employee_data[count].split(",");
+                            table_data += '<tr>';
+                            
+                            for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                                if(count === 0){
+                                   if(cell_count === 1){
+                                       table_data += '<th align="center" style="background-color:#ec6602">name</th>';
+                                   } 
+                                    else if(cell_count === 2){
+                                       table_data += '<th align="center" style="background-color:#ec6602">website</th>';
+                                   } else if(cell_count === 3){
+                                       table_data += '<th align="center" style="background-color:#ec6602">revenue</th>';
+                                   } else if(cell_count === 4){
+                                       table_data += '<th align="center" style="background-color:#ec6602">#employees</th>';
+                                   } else if(cell_count === 5){
+                                       table_data += '<th align="center" style="background-color:#ec6602">' + cell_data[cell_count] + '</th>';
+                                   } 
+                                    else{
+                                        table_data += '<th align="center" style="background-color:#ec6602">' + cell_data[cell_count] + '</th>';
+                                    }
+                                }
+                                else if (cell_count === 0) {
+                                    table_data += '<th>' + cell_data[cell_count] + '</th>';
+                                } 
+                                else if (cell_count === 2){
+                                               var cd = cell_data[cell_count]
+                                               var linktd = '<td>' + '<a target="_blank" href=' + cd + '>' + cd + '</a>' + '</td>'
+                                               table_data += linktd
+                                               }
+                                else if(cell_count === 5){
+                                                   var cd = cell_data[cell_count]
+                                                   console.log(cd)
+                                                   if(cd>=90){
+                                                       var linktd = '<td style="background-color:#7cb342;font-weight:bold">' + cd + '</td>'
+                                                       table_data += linktd
+                                                   }
+                                                   else if(cd>=80){
+                                                       var linktd = '<td style="background-color:rgb(255,210,0);font-weight:bold">' + cd + '</td>'
+                                                       table_data += linktd
+                                                   }
+                                                    else if (cd>=60){
+                                                        var linktd = '<td style="background-color:#ffa000;font-weight:bold">' + cd + '</td>'
+                                                       table_data += linktd
+                                                    }
+                                    else if (cd>0){
+                                        var linktd = '<td style="background-color:#ff5722;font-weight:bold">' + cd + '</td>'
+                                                       table_data += linktd
+                                    }
+                                    
+                                                   else{
+                                                       var linktd = '<td style="color:black">' + cd + '</td>'
+                                                       table_data += linktd
+                                                   }
+                                                   
+                                               } 
+                                
+                                else {
+                                    table_data += '<td>' + cell_data[cell_count] + '</td>';
+                                }
+                            }
+                            table_data += '</tr>';
+                        }
+                                    table_data += '</table>';
+                                    $('#employee_table').html(table_data);
+                                    }
+                                    });
+                         document.getElementById("employee_table").style.display = "block";
+                     }
+                });
+                          document.getElementById("spider-loader").style.display = "none";
+              });
+                });
+    </script>
+    <script type="text/html" id="appendTemplate">
+        <div class="chip">John Doe</div>
+</script>
+
+
+</body>
+
+</html>
