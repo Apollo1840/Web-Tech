@@ -12,6 +12,12 @@ Study by demands can slowly solve your problem but it will be a nightmare to deb
 * build a working nav bar
 * updates partial content in local website by javascript or flask
 
+### how to set up your remote website
+1. download ngrok to your computer
+2. use command line to authtoken your ngrok
+3. remember your port (80)
+4. set your flask port to 80
+
 ## The skills I going to share are:
 * javascript
 * advance html skills

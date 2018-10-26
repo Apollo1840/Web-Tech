@@ -27,8 +27,8 @@ def my_form_post():
 
 @app.route('/input')
 def show_input():
-    print(request.args)
+    print(request.args['name'])
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=80)
