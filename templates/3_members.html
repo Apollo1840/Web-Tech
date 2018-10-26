@@ -1,0 +1,17 @@
+{% extends '3_layout.html' %}
+
+ 
+ 
+{% block body %}
+ 
+   There are members.
+   
+   <ul class='list-group'>
+       {% for member in members %}
+         <li class='list-group-item'>{{member}}</li>
+       {% endfor %}
+   
+       <li></li>
+   </ul>
+ 
+{% endblock %}
